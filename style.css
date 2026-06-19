@@ -429,6 +429,7 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(var(--card-min, 17.5rem), 1fr));
     gap: var(--space-7);
+   padding: 0;
   }
   .programs-grid { --card-min: 15rem; margin-bottom: var(--space-9); }
 
