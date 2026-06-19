@@ -183,6 +183,7 @@
     --color-accent-strong:  var(--saffron-600);
     --color-on-brand:       #FFFFFF;
     --color-on-accent:      #FFFFFF;
+    --color-heading:        var(--color-brand); /* headings/labels — decoupled from --color-brand so it can differ per theme without recoloring every button/link */
     --color-danger:         #B3261E;
     --color-focus-ring:     #2563EB;
     --overlay-rgb:           6, 27, 40;
@@ -234,6 +235,7 @@
     --color-accent-strong: #D97706;
     --color-on-brand: #FFFFFF;
     --color-on-accent: #1C1306;
+    --color-heading: var(--color-text-primary);
     --color-danger: #F87171;
     --color-focus-ring: #60A5FA;
     --overlay-rgb: 0, 0, 0;
@@ -258,6 +260,7 @@
       --color-accent-strong: #D97706;
       --color-on-brand: #FFFFFF;
       --color-on-accent: #1C1306;
+      --color-heading: var(--color-text-primary);
       --color-danger: #F87171;
       --color-focus-ring: #60A5FA;
       --overlay-rgb: 0, 0, 0;
@@ -309,6 +312,7 @@
     --color-accent-strong: #D97706;
     --color-on-brand: #FFFFFF;
     --color-on-accent: #1C1306;
+    --color-heading: var(--color-text-primary);
     --color-danger: #F87171;
     --color-focus-ring: #60A5FA;
     --overlay-rgb: 0, 0, 0;
@@ -333,6 +337,7 @@
     --color-accent-strong: #00B8CC;
     --color-on-brand: #000000;
     --color-on-accent: #000000;
+    --color-heading: var(--color-text-primary);
     --color-danger: #FF6B6B;
     --color-focus-ring: #00E5FF;
     --overlay-rgb: 0, 0, 0;
@@ -493,7 +498,7 @@
   .section-title {
     font-size: var(--text-4xl);
     font-weight: 800;
-    color: var(--color-brand);
+    color: var(--color-heading);
     line-height: var(--lh-tight);
     letter-spacing: var(--ls-tight);
     margin-bottom: var(--space-4);
@@ -598,7 +603,7 @@
   .form-input[aria-invalid="true"], .form-textarea[aria-invalid="true"] { border-color: var(--color-danger); }
   .form-checkbox, .form-radio { inline-size: 1.25rem; block-size: 1.25rem; accent-color: var(--color-brand); }
   .form-fieldset { border: var(--border-width) solid var(--color-border); border-radius: var(--radius-md); padding: var(--space-5); }
-  .form-fieldset legend { font-weight: 700; color: var(--color-brand); padding-inline: var(--space-2); }
+  .form-fieldset legend { font-weight: 700; color: var(--color-heading); padding-inline: var(--space-2); }
 
   /* ---------- Announcement bar ---------- */
   .announce-bar {
@@ -641,7 +646,7 @@
 
   .brand { display: flex; align-items: center; gap: var(--space-3); }
   .brand-logo { width: 3rem; height: 3rem; border-radius: var(--radius-md); object-fit: contain; }
-  .brand-name { font-size: var(--text-xl); font-weight: 800; color: var(--color-brand); letter-spacing: var(--ls-tight); }
+  .brand-name { font-size: var(--text-xl); font-weight: 800; color: var(--color-heading); letter-spacing: var(--ls-tight); }
 
   .main-nav { display: flex; align-items: center; gap: var(--space-2); }
   .main-nav a {
@@ -820,7 +825,7 @@
   .hero-title {
     font-size: var(--text-6xl);
     font-weight: 800;
-    color: var(--color-brand);
+    color: var(--color-heading);
     line-height: var(--lh-tight);
     margin-bottom: var(--space-6);
     letter-spacing: var(--ls-tight);
@@ -870,7 +875,7 @@
     margin-bottom: var(--space-6);
     font-size: var(--text-2xl);
   }
-  .feature-card h3 { font-size: var(--text-xl); font-weight: 700; color: var(--color-brand); margin-bottom: var(--space-3); }
+  .feature-card h3 { font-size: var(--text-xl); font-weight: 700; color: var(--color-heading); margin-bottom: var(--space-3); }
   .feature-card p { font-size: var(--text-md); color: var(--color-text-secondary); line-height: var(--lh-loose); }
 
   /* ---------- Program cards ---------- */
@@ -894,7 +899,7 @@
 
   .program-header { display: flex; justify-content: space-between; align-items: center; flex-shrink: 0; margin-bottom: var(--space-2); }
   .program-tag {
-    background: var(--color-brand-soft); color: var(--color-brand);
+    background: var(--color-brand-soft); color: var(--color-heading);
     font-size: var(--text-xs); font-weight: 700;
     padding: var(--space-2) var(--space-4);
     border-radius: var(--radius-full);
@@ -902,7 +907,7 @@
     text-transform: uppercase;
   }
   .program-status { font-size: var(--text-xs); font-weight: 700; color: var(--color-accent); text-transform: uppercase; letter-spacing: var(--ls-wide); }
-  .program-card h3 { font-size: var(--text-2xl); font-weight: 700; color: var(--color-brand); line-height: var(--lh-snug); }
+  .program-card h3 { font-size: var(--text-2xl); font-weight: 700; color: var(--color-heading); line-height: var(--lh-snug); }
   .program-card p { font-size: var(--text-md); color: var(--color-text-secondary); line-height: var(--lh-loose); flex-grow: 1; }
   .program-btn { width: 100%; flex-shrink: 0; margin-top: auto; }
   .programs-note { text-align: center; font-size: var(--text-md); color: var(--color-text-secondary); padding-top: var(--space-4); }
@@ -918,8 +923,9 @@
   .steps-list::before {
     content: '';
     position: absolute;
-    top: 2rem;
-    inset-inline: 10%;
+    top: 2rem; /* vertical center of the 4rem step-num circle */
+    left: 2rem; /* horizontal center of the first circle (half its width) */
+    right: 2rem; /* horizontal center of the last circle */
     height: 2px;
     background: var(--color-brand-soft);
     z-index: 0;
@@ -935,7 +941,7 @@
     border: 4px solid var(--color-surface);
     box-shadow: var(--shadow-md);
   }
-  .step-body h3 { font-size: var(--text-xl); font-weight: 700; color: var(--color-brand); margin-bottom: var(--space-3); }
+  .step-body h3 { font-size: var(--text-xl); font-weight: 700; color: var(--color-heading); margin-bottom: var(--space-3); }
   .step-body p { font-size: var(--text-md); color: var(--color-text-secondary); line-height: var(--lh-loose); }
 
   /* ---------- FAQ ---------- */
@@ -956,7 +962,7 @@
     display: flex; justify-content: space-between; align-items: center;
     padding: var(--space-6) var(--space-8);
     background: var(--color-surface-subtle);
-    color: var(--color-brand);
+    color: var(--color-heading);
     font-size: var(--text-lg); font-weight: 600;
     gap: var(--space-5);
     text-align: start;
@@ -974,17 +980,18 @@
     transition: var(--transition-colors), transform var(--duration-base) var(--ease-standard);
   }
   .faq-item.open .faq-icon { background: var(--color-accent); color: var(--color-on-accent); transform: rotate(45deg); }
-  /* grid-template-rows accordion: smoother & uncapped vs. legacy max-height hack */
+  /* max-height collapse: fully hides content by default (a grid-template-rows:0fr
+     approach can leave a sliver visible because the row track's automatic minimum
+     size still has to accommodate the child's padding-box in some engines).
+     The cap below (80rem) is generous enough that no realistic FAQ answer is
+     ever visibly truncated, unlike the legacy fixed 500px ceiling. */
   .faq-ans {
-    display: grid;
-    grid-template-rows: 0fr;
+    max-height: 0;
     overflow: hidden;
-    transition: grid-template-rows var(--duration-slow) var(--ease-standard);
+    transition: max-height var(--duration-slow) var(--ease-standard);
   }
-  .faq-item.open .faq-ans { grid-template-rows: 1fr; }
+  .faq-item.open .faq-ans { max-height: 80rem; }
   .faq-ans p {
-    min-height: 0;
-    overflow: hidden;
     padding: var(--space-6) var(--space-8);
     font-size: var(--text-md);
     color: var(--color-text-secondary);
@@ -1013,7 +1020,7 @@
   }
   .contact-card:hover { border-color: var(--color-accent-strong); box-shadow: var(--shadow-sm); transform: translateY(-4px); }
   .contact-label { font-size: var(--text-xs); font-weight: 700; color: var(--color-accent); text-transform: uppercase; letter-spacing: var(--ls-widest); margin-bottom: var(--space-2); }
-  .contact-card strong { font-size: var(--text-md); color: var(--color-brand); font-weight: 600; }
+  .contact-card strong { font-size: var(--text-md); color: var(--color-heading); font-weight: 600; }
   .contact-card a { color: var(--color-brand); }
   .contact-card a:hover { color: var(--color-accent); }
   .contact-ai-btn {
@@ -1105,7 +1112,7 @@
     border-bottom: var(--border-width) solid var(--color-border);
     background: var(--color-surface-subtle);
   }
-  .modal-head h3 { font-size: var(--text-xl); font-weight: 700; color: var(--color-brand); }
+  .modal-head h3 { font-size: var(--text-xl); font-weight: 700; color: var(--color-heading); }
   .modal-close {
     font-size: var(--text-2xl); color: var(--color-text-secondary);
     width: 2.5rem; height: 2.5rem;
@@ -1119,7 +1126,7 @@
 
   .course-table { font-size: var(--text-md); margin-top: var(--space-4); }
   .course-table th, .course-table td { padding: var(--space-4) var(--space-5); border-bottom: var(--border-width) solid var(--color-border); text-align: start; }
-  .course-table th { color: var(--color-brand); font-weight: 600; width: 8.75rem; background: var(--color-surface-subtle); }
+  .course-table th { color: var(--color-heading); font-weight: 600; width: 8.75rem; background: var(--color-surface-subtle); }
   .course-table td { color: var(--color-text-primary); }
 
   /* ---------- AI chat widget ---------- */
