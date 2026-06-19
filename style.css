@@ -825,16 +825,41 @@
   .trust-row { display: flex; gap: var(--space-7); flex-wrap: wrap; font-size: var(--text-md); color: var(--color-text-secondary); font-weight: 500; }
   .trust-dot { display: inline-block; width: 8px; height: 8px; background: var(--color-accent); border-radius: var(--radius-full); margin-inline-end: var(--space-2); vertical-align: middle; }
 
- .hero-visual {
+/* --- INDUSTRY LEVEL ANIMATIONS --- */
+@keyframes fadeUpReveal {
+  0% { 
+    opacity: 0; 
+    transform: translateY(40px); 
+  }
+  100% { 
+    opacity: 1; 
+    transform: translateY(0); 
+  }
+}
+
+@keyframes levitate {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-15px); } 
+  100% { transform: translateY(0px); }  
+}
+
+
+.hero-visual {
   position: relative;
   display: flex;
   max-height: 45rem;
+
+  animation: fadeUpReveal 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 .hero-img { 
   width: 100%; 
   height: auto; 
   object-fit: contain; 
+ 
+  animation: levitate 6s ease-in-out infinite;
+ 
+  animation-delay: 0.5s; 
 }
   .hero-img-fade { position: absolute; inset: 0; background: linear-gradient(160deg, rgb(var(--shadow-rgb) / .25), transparent 70%); }
 
