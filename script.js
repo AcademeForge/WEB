@@ -14,9 +14,9 @@ const TEXT = {
   community: "AcademeForge community spaces should remain respectful and learning-focused. Spam, harassment, abusive language, impersonation, and cheating are not allowed.",
   terms: "By using AcademeForge website, app, or learning services, users should follow platform rules, respect intellectual property, and use official channels for support.",
   safety: "Students should use only official AcademeForge links, avoid sharing passwords, and report suspicious messages. Use the help desk and support channels for platform issues.",
-  programs: "AcademeForge planned programs: Video & Media Editing (6 months), Creative & Graphic Design (6 months), AI Coding & Logic Foundation (1 year), Freelancing & Monetization (1 year). All fees are to be announced. Admissions are under rebuild.",
+  programs: "AcademeForge planned programs: Video & Media Editing (2 weeks), Creative & Graphic Design (2 weeks), AI Coding & Logic Foundation (2 weeks), Freelancing & Monetization (2 weeks). All fees are to be announced. Admissions are under rebuild.",
   fees: "Fees are currently marked as To be announced. Final fee structure will be published after the platform rebuild, admission structure, and batch policies are finalized.",
-  support: "WhatsApp and call support are not available. Use the AcademeForge AI Help Desk on the website or email academeforge@gmail.com."
+  support: "WhatsApp and call support are not available. Use the AcademeForge AI Help Desk on the website or email help.academeforge.in."
 };
 
 const KNOWLEDGE = Object.entries(TEXT).map(([k,v]) => ({key:k, content:v}));
