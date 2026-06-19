@@ -1324,8 +1324,8 @@
 
   .hero { padding-block: var(--space-10) var(--space-11); }
   .hero-visual { aspect-ratio: 4 / 3; max-height: 22rem; }
-  .trust-row { gap: var(--space-4); flex-direction: column; align-items: flex-start; }
-
+ .trust-row { display: none; }
+ 
   .footer-top { grid-template-columns: 1fr 1fr; padding-block: var(--space-10) var(--space-7); gap: var(--space-7); }
   .footer-brand { grid-column: 1 / -1; }
   .footer-bottom { flex-direction: column; text-align: center; justify-content: center; }
