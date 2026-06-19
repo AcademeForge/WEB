@@ -134,44 +134,45 @@
     /* breakpoints: xs 480 · sm 768 · md 1024 · lg 1200 · xl 1400 · 2xl 1600 */
 
     /* ---- Color primitives ---- */
-    --navy-900: #0B2A3D;
-    --navy-950: #061B28;
-    --saffron-500: #C8722A;
-    --saffron-600: #B5621F;
-    --sandstone-600: #C9A876;
-    --sandstone-200: #E8DCC4;
-    --ivory-100: #FBF8F2;
-    --ivory-200: #F3ECDF;
-    --manuscript-200: #EFE6D3;
-    --neutral-900: #1C2530;
-    --neutral-600: #4B5560;
-    --neutral-200: #E2D6BC;
+    --slate-900: #0F172A;
+    --slate-950: #0B1220;
+    --slate-800: #1E293B;
+    --ember-500: #EA580C;
+    --ember-600: #DC2626;
+    --gold-600: #C2410C;
+    --gold-200: #FDBA74;
+    --cream-100: #FCF8F3;
+    --cream-200: #F5EFE4;
+    --linen-200: #F1E9DA;
+    --neutral-900: #0F172A;
+    --neutral-600: #475569;
+    --neutral-200: #E2E8F0;
 
     /* =========================================================
        SEMANTIC TOKENS — THEME SURFACE (LIGHT = DEFAULT)
        Every component consumes ONLY these tokens. Themes below
        remap this surface; components never need overriding.
        ========================================================= */
-    --color-canvas:         var(--ivory-100);
-    --color-canvas-subtle:  var(--ivory-200);
+    --color-canvas:         var(--cream-100);
+    --color-canvas-subtle:  var(--cream-200);
     --color-surface:        #FFFFFF;
-    --color-surface-subtle: var(--manuscript-200);
+    --color-surface-subtle: var(--linen-200);
     --color-border:         var(--neutral-200);
     --color-text-primary:   var(--neutral-900);
     --color-text-secondary: var(--neutral-600);
     --color-text-inverse:   #FFFFFF;
-    --color-brand:          var(--navy-900);
-    --color-brand-strong:   var(--navy-950);
-    --color-accent:         var(--saffron-500);
-    --color-accent-strong:  var(--saffron-600);
+    --color-brand:          var(--slate-900);
+    --color-brand-strong:   var(--slate-800);
+    --color-accent:         var(--ember-500);
+    --color-accent-strong:  var(--ember-600);
     --color-on-brand:       #FFFFFF;
     --color-on-accent:      #FFFFFF;
     --color-heading:        var(--color-brand); /* headings/labels — decoupled from --color-brand so it can differ per theme without recoloring every button/link */
-    --color-danger:         #B3261E;
+    --color-danger:         #DC2626;
     --color-focus-ring:     #2563EB;
-    --overlay-rgb:           6, 27, 40;
-    --shadow-rgb:            11, 42, 61;
-    --hero-pattern-opacity: .6;
+    --overlay-rgb:           15, 23, 42;
+    --shadow-rgb:            15, 23, 42;
+    --hero-pattern-opacity: .5;
 
     /* ---- Derived tokens (computed once via color-mix; auto-adapt per theme) ---- */
     --color-text-tertiary:   color-mix(in srgb, var(--color-text-secondary) 70%, var(--color-canvas) 30%);
@@ -204,51 +205,51 @@
      THEME: DARK — explicit opt-in via [data-theme="dark"]
      --------------------------------------------------------------------- */
   [data-theme="dark"] {
-    --color-canvas: #0B1220;
-    --color-canvas-subtle: #0F1A2E;
-    --color-surface: #121B2D;
-    --color-surface-subtle: #182336;
-    --color-border: #243248;
-    --color-text-primary: #F5F7FA;
-    --color-text-secondary: #AAB4C4;
-    --color-text-inverse: #0B1220;
-    --color-brand: #2563EB;
-    --color-brand-strong: #0B1220;
-    --color-accent: #F59E0B;
-    --color-accent-strong: #D97706;
+    --color-canvas: #0A0E16;
+    --color-canvas-subtle: #0E1420;
+    --color-surface: #141B29;
+    --color-surface-subtle: #1A2233;
+    --color-border: #2A3346;
+    --color-text-primary: #F4F6FA;
+    --color-text-secondary: #9AA6BC;
+    --color-text-inverse: #0A0E16;
+    --color-brand: #3B82F6;
+    --color-brand-strong: #1D4ED8;
+    --color-accent: #F0883E;
+    --color-accent-strong: #DC6A1F;
     --color-on-brand: #FFFFFF;
-    --color-on-accent: #1C1306;
+    --color-on-accent: #1A0F02;
     --color-heading: var(--color-text-primary);
     --color-danger: #F87171;
     --color-focus-ring: #60A5FA;
     --overlay-rgb: 0, 0, 0;
     --shadow-rgb: 0, 0, 0;
-    --hero-pattern-opacity: .2;
+    --hero-pattern-opacity: .14;
   }
 
   /* System preference fallback: honor OS dark mode when no explicit theme set */
   @media (prefers-color-scheme: dark) {
     :root:not([data-theme]) {
-      --color-canvas: #0B1220;
-      --color-canvas-subtle: #0F1A2E;
-      --color-surface: #121B2D;
-      --color-surface-subtle: #182336;
-      --color-border: #243248;
-      --color-text-primary: #F5F7FA;
-      --color-text-secondary: #AAB4C4;
-      --color-text-inverse: #0B1220;
-      --color-brand: #2563EB;
-      --color-brand-strong: #0B1220;
-      --color-accent: #F59E0B;
-      --color-accent-strong: #D97706;
+      --color-canvas: #0A0E16;
+      --color-canvas-subtle: #0E1420;
+      --color-surface: #141B29;
+      --color-surface-subtle: #1A2233;
+      --color-border: #2A3346;
+      --color-text-primary: #F4F6FA;
+      --color-text-secondary: #9AA6BC;
+      --color-text-inverse: #0A0E16;
+      --color-brand: #3B82F6;
+      --color-brand-strong: #1D4ED8;
+      --color-accent: #F0883E;
+      --color-accent-strong: #DC6A1F;
       --color-on-brand: #FFFFFF;
-      --color-on-accent: #1C1306;
+      --color-on-accent: #1A0F02;
       --color-heading: var(--color-text-primary);
       --color-danger: #F87171;
       --color-focus-ring: #60A5FA;
       --overlay-rgb: 0, 0, 0;
       --shadow-rgb: 0, 0, 0;
-      --hero-pattern-opacity: .2;
+      --hero-pattern-opacity: .14;
     }
   }
 
