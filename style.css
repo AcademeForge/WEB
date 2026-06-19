@@ -598,13 +598,14 @@
     font-size: var(--text-sm);
     font-weight: 500;
   }
-  .announce-bar a {
-    color: var(--color-accent);
-    font-weight: 700;
-    margin-inline-start: var(--space-2);
-    text-decoration: underline;
-    text-underline-offset: 2px;
-  }
+
+.announce-bar a {
+  color: #4ade80; 
+  font-weight: 700;
+  margin-inline-start: var(--space-2);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
   .announce-bar a:hover { color: var(--color-on-brand); }
 
   /* ---------- Site header & navigation ---------- */
