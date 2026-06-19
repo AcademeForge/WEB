@@ -205,23 +205,23 @@
      THEME: DARK — explicit opt-in via [data-theme="dark"]
      --------------------------------------------------------------------- */
   [data-theme="dark"] {
-    --color-canvas: #0A0E16;
-    --color-canvas-subtle: #0E1420;
-    --color-surface: #141B29;
-    --color-surface-subtle: #1A2233;
-    --color-border: #2A3346;
-    --color-text-primary: #F4F6FA;
-    --color-text-secondary: #9AA6BC;
-    --color-text-inverse: #0A0E16;
-    --color-brand: #3B82F6;
-    --color-brand-strong: #1D4ED8;
-    --color-accent: #F0883E;
-    --color-accent-strong: #DC6A1F;
+    --color-canvas: #120F0C;
+    --color-canvas-subtle: #17130F;
+    --color-surface: #1C1713;
+    --color-surface-subtle: #241D17;
+    --color-border: #362C22;
+    --color-text-primary: #F6EFE5;
+    --color-text-secondary: #B8A99A;
+    --color-text-inverse: #120F0C;
+    --color-brand: #F0763C;
+    --color-brand-strong: #C2410C;
+    --color-accent: #DC2626;
+    --color-accent-strong: #B91C1C;
     --color-on-brand: #FFFFFF;
-    --color-on-accent: #1A0F02;
+    --color-on-accent: #FFFFFF;
     --color-heading: var(--color-text-primary);
     --color-danger: #F87171;
-    --color-focus-ring: #60A5FA;
+    --color-focus-ring: #FBBF24;
     --overlay-rgb: 0, 0, 0;
     --shadow-rgb: 0, 0, 0;
     --hero-pattern-opacity: .14;
@@ -230,23 +230,23 @@
   /* System preference fallback: honor OS dark mode when no explicit theme set */
   @media (prefers-color-scheme: dark) {
     :root:not([data-theme]) {
-      --color-canvas: #0A0E16;
-      --color-canvas-subtle: #0E1420;
-      --color-surface: #141B29;
-      --color-surface-subtle: #1A2233;
-      --color-border: #2A3346;
-      --color-text-primary: #F4F6FA;
-      --color-text-secondary: #9AA6BC;
-      --color-text-inverse: #0A0E16;
-      --color-brand: #3B82F6;
-      --color-brand-strong: #1D4ED8;
-      --color-accent: #F0883E;
-      --color-accent-strong: #DC6A1F;
+      --color-canvas: #120F0C;
+      --color-canvas-subtle: #17130F;
+      --color-surface: #1C1713;
+      --color-surface-subtle: #241D17;
+      --color-border: #362C22;
+      --color-text-primary: #F6EFE5;
+      --color-text-secondary: #B8A99A;
+      --color-text-inverse: #120F0C;
+      --color-brand: #F0763C;
+      --color-brand-strong: #C2410C;
+      --color-accent: #DC2626;
+      --color-accent-strong: #B91C1C;
       --color-on-brand: #FFFFFF;
-      --color-on-accent: #1A0F02;
+      --color-on-accent: #FFFFFF;
       --color-heading: var(--color-text-primary);
       --color-danger: #F87171;
-      --color-focus-ring: #60A5FA;
+      --color-focus-ring: #FBBF24;
       --overlay-rgb: 0, 0, 0;
       --shadow-rgb: 0, 0, 0;
       --hero-pattern-opacity: .14;
